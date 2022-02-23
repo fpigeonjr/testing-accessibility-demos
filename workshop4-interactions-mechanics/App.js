@@ -15,32 +15,41 @@ import ScreenReaderExercise from "./exercise3-screen-reader-overlap/page-listing
 import AnnouncementsExercise from "./exercise4-announcements-with-AT/page-submit-listing"
 import AppScriptingPage from "./exercise5-advanced-scripting-ARIA/page-adventures-hikes"
 
+import SkipLinks from "workshop4-components/skip-links"
+
 import imgFooterLogo from "/images/icons/footer-logo.svg"
 
 export function App() {
-	return <>
-		<Header />
-		<main id="main">
-			<Router>
-				<HomePage path="/workshop4-interactions-mechanics/" />
-				<AboutPage path="/workshop4-interactions-mechanics/about" />
-				<SubmitListingPage path="/workshop4-interactions-mechanics/submit-listing" />
-				<HikesPage path="/workshop4-interactions-mechanics/adventures-hikes" />
-				<ListingsPage path="/workshop4-interactions-mechanics/listings" />
-				<Listing path="/workshop4-interactions-mechanics/listing/:id" />
-				<KeyboardExercise path="/workshop4-interactions-mechanics/exercise2/:id" />
-				<ScreenReaderExercise path="/workshop4-interactions-mechanics/exercise3/:id" />
-				<AnnouncementsExercise path="/workshop4-interactions-mechanics/exercise4/submit-listing" />
-				<AppScriptingPage path="/workshop4-interactions-mechanics/exercise5/adventures-hikes" />
-				<ComponentSandbox path="/workshop4-interactions-mechanics/component-sandbox" />
-			</Router>
-		</main>
-		<footer id="footer">
-			<div className="layout">
-				<div id="footer-logo">
-					<img src={imgFooterLogo} alt="CampSpots" />
-				</div>
-			</div>
-		</footer>
-	</>
+  return (
+    <>
+      <Header />
+      <main id="main">
+        <Router>
+          <HomePage path="/workshop4-interactions-mechanics/" />
+          <AboutPage path="/workshop4-interactions-mechanics/about" />
+          <SubmitListingPage path="/workshop4-interactions-mechanics/submit-listing" />
+          <HikesPage path="/workshop4-interactions-mechanics/adventures-hikes" />
+          <ListingsPage path="/workshop4-interactions-mechanics/listings" />
+          <Listing path="/workshop4-interactions-mechanics/listing/:id" />
+          <KeyboardExercise path="/workshop4-interactions-mechanics/exercise2/:id" />
+          <ScreenReaderExercise path="/workshop4-interactions-mechanics/exercise3/:id" />
+          <AnnouncementsExercise path="/workshop4-interactions-mechanics/exercise4/submit-listing" />
+          <AppScriptingPage path="/workshop4-interactions-mechanics/exercise5/adventures-hikes" />
+          <ComponentSandbox path="/workshop4-interactions-mechanics/component-sandbox" />
+        </Router>
+      </main>
+      <footer id="footer">
+        <SkipLinks variant="footer">
+          <li>
+            <a href="#header">Back to top</a>
+          </li>
+        </SkipLinks>
+        <div className="layout">
+          <div id="footer-logo">
+            <img src={imgFooterLogo} alt="CampSpots" />
+          </div>
+        </div>
+      </footer>
+    </>
+  )
 }
